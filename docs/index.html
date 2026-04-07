@@ -1,1 +1,130 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WATCH</title>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden}
+  body{
+    background:#1a237e;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-family:'Georgia','Times New Roman',serif;
+    color:rgba(255,255,255,.88);
+  }
+  /* subtle radial glow behind watch */
+  body::before{
+    content:'';
+    position:absolute;
+    width:420px;height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(100,140,255,.18) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .watch-wrap{
+    position:relative;
+    animation:float 6s ease-in-out infinite;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+  }
+  .watch-svg{
+    width:220px;height:220px;
+    filter:drop-shadow(0 8px 32px rgba(0,0,0,.35));
+  }
+  h1{
+    margin-top:36px;
+    font-size:1.6rem;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    font-weight:400;
+    opacity:.85;
+  }
+  .line{
+    width:48px;height:1px;
+    background:rgba(255,255,255,.3);
+    margin-top:18px;
+  }
+</style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-rQ77GcOf_OMaqzLW3wWXn.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+</head>
+<body>
+
+<div class="watch-wrap">
+  <svg class="watch-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- strap top -->
+    <rect x="78" y="8" width="44" height="48" rx="6" fill="#b0bec5" opacity=".6"/>
+    <rect x="82" y="12" width="36" height="40" rx="4" fill="none" stroke="#cfd8dc" stroke-width=".5" opacity=".3"/>
+    <!-- strap bottom -->
+    <rect x="78" y="144" width="44" height="48" rx="6" fill="#b0bec5" opacity=".6"/>
+    <rect x="82" y="148" width="36" height="40" rx="4" fill="none" stroke="#cfd8dc" stroke-width=".5" opacity=".3"/>
+    <!-- buckle holes -->
+    <circle cx="100" cy="164" r="1.5" fill="#78909c"/>
+    <circle cx="100" cy="172" r="1.5" fill="#78909c"/>
+    <circle cx="100" cy="180" r="1.5" fill="#78909c"/>
+    <!-- case outer -->
+    <circle cx="100" cy="100" r="52" fill="#263238"/>
+    <circle cx="100" cy="100" r="50" fill="none" stroke="#546e7a" stroke-width="1.2"/>
+    <!-- bezel ring -->
+    <circle cx="100" cy="100" r="46" fill="none" stroke="#37474f" stroke-width="2"/>
+    <!-- dial -->
+    <circle cx="100" cy="100" r="42" fill="#0d1b2a"/>
+    <!-- subtle inner glow -->
+    <circle cx="100" cy="100" r="40" fill="url(#dialGlow)"/>
+    <defs>
+      <radialGradient id="dialGlow" cx="50%" cy="40%" r="60%">
+        <stop offset="0%" stop-color="#1565c0" stop-opacity=".12"/>
+        <stop offset="100%" stop-color="transparent"/>
+      </radialGradient>
+    </defs>
+    <!-- hour markers -->
+    <g stroke="#90a4ae" stroke-width="1.6" stroke-linecap="round" opacity=".7">
+      <line x1="100" y1="62" x2="100" y2="68"/><!-- 12 -->
+      <line x1="138" y1="100" x2="132" y2="100"/><!-- 3 -->
+      <line x1="100" y1="138" x2="100" y2="132"/><!-- 6 -->
+      <line x1="62" y1="100" x2="68" y2="100"/><!-- 9 -->
+    </g>
+    <!-- minute tick marks -->
+    <g stroke="#546e7a" stroke-width=".6" stroke-linecap="round" opacity=".45">
+      <line x1="119" y1="63.4" x2="117" y2="66.8"/>
+      <line x1="133" y1="76" x2="130.2" y2="78.2"/>
+      <line x1="136.6" y1="81" x2="133.2" y2="83"/>
+      <line x1="136.6" y1="119" x2="133.2" y2="117"/>
+      <line x1="133" y1="124" x2="130.2" y2="121.8"/>
+      <line x1="119" y1="136.6" x2="117" y2="133.2"/>
+      <line x1="81" y1="136.6" x2="83" y2="133.2"/>
+      <line x1="67" y1="124" x2="69.8" y2="121.8"/>
+      <line x1="63.4" y1="119" x2="66.8" y2="117"/>
+      <line x1="63.4" y1="81" x2="66.8" y2="83"/>
+      <line x1="67" y1="76" x2="69.8" y2="78.2"/>
+      <line x1="81" y1="63.4" x2="83" y2="66.8"/>
+    </g>
+    <!-- hour hand (10:10-ish) -->
+    <line x1="100" y1="100" x2="89" y2="84" stroke="#cfd8dc" stroke-width="2.8" stroke-linecap="round"/>
+    <!-- minute hand -->
+    <line x1="100" y1="100" x2="118" y2="74" stroke="#cfd8dc" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- second hand -->
+    <line x1="100" y1="108" x2="100" y2="66" stroke="#ef5350" stroke-width=".8" stroke-linecap="round" opacity=".85"/>
+    <!-- center pin -->
+    <circle cx="100" cy="100" r="3" fill="#37474f"/>
+    <circle cx="100" cy="100" r="1.8" fill="#78909c"/>
+    <!-- crown (side button) -->
+    <rect x="150" y="95" width="8" height="10" rx="2" fill="#37474f"/>
+    <rect x="151" y="97" width="6" height="6" rx="1.5" fill="none" stroke="#546e7a" stroke-width=".5"/>
+  </svg>
+</div>
+
+
+
+</body>
+</html>
