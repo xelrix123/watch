@@ -592,6 +592,7 @@
 
   <script>
     const METADATA_GZ_URL = "metadata.json.gz";
+    const NO_LOCAL_LINKS = true;
     const ISO_NAMES = {
       'af':'Afrikaans','sq':'Albanian','am':'Amharic','ar':'Arabic','hy':'Armenian',
       'az':'Azerbaijani','eu':'Basque','be':'Belarusian','bn':'Bengali','bs':'Bosnian',
@@ -1744,15 +1745,17 @@
         const origUrl = row.originalUrl;
         const sameUrl = viewUrl && origUrl && viewUrl === origUrl;
 
-        if (sameUrl) {
+        if (sameUrl || NO_LOCAL_LINKS) {
           // Only G button
-          const g = document.createElement('a');
-          g.className = 'obj-link-btn g-btn';
-          g.textContent = 'G';
-          g.href = origUrl;
-          g.target = '_blank';
-          g.rel = 'noopener noreferrer';
-          tdLinks.appendChild(g);
+          if (origUrl) {
+            const g = document.createElement('a');
+            g.className = 'obj-link-btn g-btn';
+            g.textContent = 'G';
+            g.href = origUrl;
+            g.target = '_blank';
+            g.rel = 'noopener noreferrer';
+            tdLinks.appendChild(g);
+          }
         } else {
           if (viewUrl) {
             const r = document.createElement('a');
