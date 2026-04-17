@@ -2397,6 +2397,7 @@
 
     async function prefetchNeighbours(index) {
       if (isMobile()) return;
+      if (USE_ORIGINAL_URL_FALLBACK) return;
       const neighbours = [
         (index - 1 + currentItems.length) % currentItems.length,
         (index + 1) % currentItems.length,
