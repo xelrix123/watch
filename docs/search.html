@@ -1332,6 +1332,14 @@
         const buffer = await response.arrayBuffer();
         const expected = new Set((bundle.files || []).map((name) => name || ''));
         const files = parseTarArchive(new Uint8Array(buffer));
+        if (files.length > 0) {
+          console.log(`[thumb] bundle ${bundle.bundle}: tar has ${files.length} entries, first few raw names:`, files.slice(0, 3).map(f => f.name));
+          const firstNorm = getFileName(files[0].name) || files[0].name;
+          const firstExpected = [...expected][0];
+          console.log(`[thumb] first tar name normalized: "${firstNorm}", first expected: "${firstExpected}"`);
+        } else {
+          console.warn(`[thumb] bundle ${bundle.bundle}: tar parsed but 0 entries found — buffer size: ${buffer.byteLength}`);
+        }
         const registeredNames = new Set();
         for (const file of files) {
           const normalized = getFileName(file.name) || file.name || '';

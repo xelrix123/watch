@@ -8,7 +8,7 @@
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-rQ77GcOf_OMaqzLW3wWXn.js"></script>
   <script>
-    window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
     plausible.init()
   </script>
   <script src="wordcloud2.js"></script>
@@ -591,7 +591,6 @@
   <div class="tooltip" id="tooltip"></div>
 
   <script>
-    const METADATA_URL = "metadata.json";
     const METADATA_GZ_URL = "metadata.json.gz";
     const ISO_NAMES = {
       'af':'Afrikaans','sq':'Albanian','am':'Amharic','ar':'Arabic','hy':'Armenian',
@@ -1012,21 +1011,12 @@
     const loadingText = document.getElementById('loading-text');
 
     async function fetchMetadata() {
-      if ('DecompressionStream' in window) {
-        try {
-          const resp = await fetch(METADATA_GZ_URL);
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          const ds = new DecompressionStream('gzip');
-          const src = resp.body ? resp.body : new Blob([await resp.arrayBuffer()]).stream();
-          const text = await new Response(src.pipeThrough(ds)).text();
-          return JSON.parse(text);
-        } catch(e) {
-          console.warn('gz fetch failed, falling back', e);
-        }
-      }
-      const resp = await fetch(METADATA_URL);
+      const resp = await fetch(METADATA_GZ_URL);
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      return resp.json();
+      const ds = new DecompressionStream('gzip');
+      const src = resp.body ? resp.body : new Blob([await resp.arrayBuffer()]).stream();
+      const text = await new Response(src.pipeThrough(ds)).text();
+      return JSON.parse(text);
     }
 
     let BRANDS = {};
