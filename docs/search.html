@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Search Tool</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI4My44Mm1tIiBoZWlnaHQ9IjgzLjgybW0iIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIKdmlld0JveD0iMCAwIDgzODIgODM4MiIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZGVmcz4KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgogICA8IVtDREFUQVsKICAgIC5maWwxIHtmaWxsOiMyQzNBNEV9CiAgICAuZmlsMCB7ZmlsbDp3aGl0ZX0KICAgXV0+CiAgPC9zdHlsZT4KIDwvZGVmcz4KIDxnIGlkPSJMYXllcl94MDAyMF8xIj4KICA8bWV0YWRhdGEgaWQ9IkNvcmVsQ29ycElEXzBDb3JlbC1MYXllciIvPgogPC9nPgogPGcgaWQ9IkxheWVyX3gwMDIwXzFfMCI+CiAgPG1ldGFkYXRhIGlkPSJDb3JlbENvcnBJRF8xQ29yZWwtTGF5ZXIiLz4KICA8cGF0aCBjbGFzcz0iZmlsMCIgZD0iTTQxOTEgMzczYzIxMDgsMCAzODE4LDE3MDkgMzgxOCwzODE4IDAsMjEwOCAtMTcwOSwzODE4IC0zODE4LDM4MTggLTIxMDgsMCAtMzgxOCwtMTcwOSAtMzgxOCwtMzgxOCAwLC0yMTA4IDE3MDksLTM4MTggMzgxOCwtMzgxOHoiLz4KICA8cGF0aCBjbGFzcz0iZmlsMSIgZD0iTTQxOTEgLTJjMjMxNiwwIDQxOTMsMTg3NyA0MTkzLDQxOTMgMCwyMzE2IC0xODc3LDQxOTMgLTQxOTMsNDE5MyAtMjMxNiwwIC00MTkzLC0xODc3IC00MTkzLC00MTkzIDAsLTIzMTYgMTg3NywtNDE5MyA0MTkzLC00MTkzem0tMjAzMiA3NDI1bDM2MyAtNjI4IDI0NyAxNDIgLTM2MyA2MjljNDg4LDI1OSAxMDQwLDQxNSAxNjI1LDQzOWwwIC0xNDQ3IDMyMyAwIDAgMTQ0N2M1ODUsLTI0IDExMzYsLTE4MSAxNjI0LC00MzlsLTM2MyAtNjI5IDI0NyAtMTQyIDM2MyA2MjhjNDg1LC0zMDYgODk3LC03MTggMTIwMiwtMTIwNGwtNjI3IC0zNjIgMTQyIC0yNDcgNjI3IDM2MmMyNTgsLTQ4NyA0MTMsLTEwMzcgNDM3LC0xNjIwbC0xNDQ2IDAgMCAtMzIzIDE0NDYgMGMtMjQsLTU4NSAtMTgxLC0xMTM3IC00NDAsLTE2MjVsLTYyNCAzNjEgLTE0MiAtMjQ3IDYyNCAtMzYwYy0zMDUsLTQ4NCAtNzE3LC04OTUgLTEyMDIsLTEyMDBsLTM2MCA2MjMgLTI0NyAtMTQyIDM2MCAtNjIzYy00ODcsLTI1OCAtMTAzNywtNDEzIC0xNjIwLC00MzhsMCAxNDQ3IC0zMjMgMCAwIC0xNDQ3Yy01ODQsMjQgLTExMzQsMTgwIC0xNjIyLDQzOGwzNjAgNjIzIC0yNDcgMTQyIC0zNjAgLTYyM2MtNDg1LDMwNSAtODk2LDcxNiAtMTIwMiwxMjAwbDYyNCAzNjAgLTE0MiAyNDcgLTYyNCAtMzYxYy0yNTksNDg4IC00MTYsMTA0MCAtNDQwLDE2MjVsMTQ0OCAwIDAgMzIzIC0xNDQ4IDBjMjQsNTgzIDE4MCwxMTMzIDQzNywxNjIwbDYyNyAtMzYyIDE0MiAyNDcgLTYyNyAzNjJjMzA1LDQ4NiA3MTcsODk4IDEyMDIsMTIwM3ptMTgyNyAtMzE2NWwxNTA1IDEwMTAgMTU5IC0yMzcgLTEzMTggLTg4NCAxMDE4IC0yNzEzIC0yNjcgLTEwMCAtMTA5OCAyOTI0eiIvPgogPC9nPgo8L3N2Zz4K" />
-
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-rQ77GcOf_OMaqzLW3wWXn.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};
+    plausible.init()
+  </script>
   <style>
     :root {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -1316,6 +1321,7 @@
       const promise = (async () => {
         const bundle = THUMB_BUNDLES[index];
         if (!bundle) {
+          console.warn(`[thumb] ensureBundleLoaded: no bundle at index ${index}`);
           return;
         }
         const bundleUrl = new URL(bundle.bundle, window.location.href).href;
@@ -1328,22 +1334,33 @@
               console.log(`[cache] bundle ${bundle.bundle} unchanged, skipping fetch`);
               return;
             }
+          } else {
+            console.warn(`[thumb] no server hash for bundle ${bundle.bundle} — will fetch unconditionally`);
           }
         }
+        console.log(`[thumb] fetching bundle ${bundle.bundle} (${(bundle.files || []).length} files expected)`);
         const response = await fetch(bundleUrl);
         if (!response.ok) {
-          throw new Error(`Failed to load ${bundle.bundle}`);
+          throw new Error(`[thumb] bundle fetch failed: ${bundle.bundle} — HTTP ${response.status} ${response.statusText}`);
         }
         const buffer = await response.arrayBuffer();
         const expected = new Set((bundle.files || []).map((name) => name || ''));
         const files = parseTarArchive(new Uint8Array(buffer));
+        const registeredNames = new Set();
         for (const file of files) {
           const normalized = getFileName(file.name) || file.name || '';
           if (!normalized || !expected.has(normalized)) {
             continue;
           }
           await registerBundleThumbnail(normalized, file.blob);
+          registeredNames.add(normalized);
         }
+        // Warn about files listed in metadata but absent from tar
+        const missing = [...expected].filter(n => n && !registeredNames.has(n));
+        if (missing.length > 0) {
+          console.warn(`[thumb] bundle ${bundle.bundle}: ${missing.length} file(s) listed in metadata but absent from tar:`, missing);
+        }
+        console.log(`[thumb] bundle ${bundle.bundle} loaded: ${registeredNames.size}/${expected.size} thumbnails registered`);
         // Store hash after successful load
         if (assetHashes !== null) {
           const serverHash = assetHashes.get(bundle.bundle);
@@ -1626,18 +1643,27 @@
         } catch (e) {}
         // 3. Load from bundle (always wait — no server fallback)
         if (fileName && bundleMap.has(fileName)) {
+          const bundleIndex = bundleMap.get(fileName);
+          const bundleName = (THUMB_BUNDLES[bundleIndex] || {}).bundle || `bundle#${bundleIndex}`;
           try {
-            await ensureBundleLoaded(bundleMap.get(fileName));
+            await ensureBundleLoaded(bundleIndex);
             const bundleHit = thumbCache.get(cacheKey);
             if (bundleHit) {
               modalImage.src = bundleHit.objectUrl;
               modalImage.addEventListener('load', () => updateSummaryLineTooltip(item, modalImage.naturalWidth, modalImage.naturalHeight), { once: true });
               return;
             }
-          } catch (e) {}
+            console.warn(`[thumb] modal: "${fileName}" not in memory cache after loading bundle ${bundleName}`);
+          } catch (e) {
+            console.warn(`[thumb] modal: bundle load error for "${fileName}" (bundle: ${bundleName})`, e);
+          }
+        } else {
+          if (fileName) {
+            console.warn(`[thumb] modal: "${fileName}" not in bundleMap — not listed in any bundle`);
+          }
         }
         // 4. No bundle available — show missing thumbnail placeholder
-        markThumbnailMissing(modalImage);
+        markThumbnailMissing(modalImage, `modal:${fileName || item.thumb}`);
       } else {
         if (zoomControls) zoomControls.hidden = false;
         if (USE_ORIGINAL_URL_FALLBACK && item.originalUrl) {
@@ -1727,10 +1753,12 @@
       }
     }
 
-    function markThumbnailMissing(img) {
+    function markThumbnailMissing(img, context) {
       if (!img) {
         return;
       }
+      const label = context ? ` [${context}]` : '';
+      console.warn(`[thumb] marking thumbnail unavailable${label}`);
       img.src = EMPTY_THUMBNAIL_SRC;
       img.alt = 'Thumbnail unavailable';
       img.classList.add('missing-thumb');
@@ -1758,22 +1786,31 @@
           return;
         }
       } catch (error) {
-        console.warn('Failed to read thumbnail from IndexedDB', error);
+        console.warn(`[thumb] IndexedDB read failed for "${cacheKey}"`, error);
       }
 
       if (fileName && bundleMap.has(fileName)) {
+        const bundleIndex = bundleMap.get(fileName);
+        const bundleName = (THUMB_BUNDLES[bundleIndex] || {}).bundle || `bundle#${bundleIndex}`;
         try {
-          await ensureBundleLoaded(bundleMap.get(fileName));
+          await ensureBundleLoaded(bundleIndex);
           const bundleHit = thumbCache.get(cacheKey);
           if (bundleHit) {
             img.src = bundleHit.objectUrl;
             return;
           }
+          console.warn(`[thumb] "${fileName}" not in memory cache after loading bundle ${bundleName} — file may be absent from tar`);
         } catch (error) {
-          console.warn('Failed to load thumbnail bundle', error);
+          console.warn(`[thumb] bundle load error for "${fileName}" (bundle: ${bundleName})`, error);
+        }
+      } else {
+        if (fileName) {
+          console.warn(`[thumb] "${fileName}" not found in bundleMap — not listed in any bundle (url: ${url})`);
+        } else {
+          console.warn(`[thumb] could not extract filename from url: ${url}`);
         }
       }
-      markThumbnailMissing(img);
+      markThumbnailMissing(img, fileName || url);
     }
 
     function populateMetadata(item) {
