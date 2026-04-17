@@ -8,7 +8,7 @@
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-rQ77GcOf_OMaqzLW3wWXn.js"></script>
   <script>
-    window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
     plausible.init()
   </script>
   <style>
@@ -893,7 +893,6 @@
     </div>
   </div>
   <script>
-    const METADATA_URL = "metadata.json";
     const METADATA_GZ_URL = "metadata.json.gz";
     const THUMB_PIP_ENABLED = true;
     const STATISTICS_URL = "stats.html";
@@ -1049,26 +1048,13 @@
     }
 
     async function fetchMetadata() {
-      if ('DecompressionStream' in window) {
-        try {
-          return await fetchAndDecodeMetadata(METADATA_GZ_URL, true);
-        } catch (error) {
-          console.warn('Falling back to uncompressed metadata', error);
-        }
-      }
-      return fetchAndDecodeMetadata(METADATA_URL, false);
+      return fetchAndDecodeMetadata(METADATA_GZ_URL);
     }
 
-    async function fetchAndDecodeMetadata(url, isGzip) {
+    async function fetchAndDecodeMetadata(url) {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Failed to load ${url}`);
-      }
-      if (!isGzip) {
-        return response.json();
-      }
-      if (!('DecompressionStream' in window)) {
-        throw new Error('Gzip decompression not supported');
       }
       const ds = new DecompressionStream('gzip');
       const sourceStream = response.body
